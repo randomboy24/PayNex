@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",                    // Where to output compiled files
+    "rootDir": "src",                    // The root directory for the source code
+    "strict": true,                      // Enable all strict type-checking options
+    "noImplicitAny": true,               // Raise error on expressions and declarations with an implied `any` type
+    "moduleResolution": "node",          // Resolve modules like Node.js
+    "esModuleInterop": true,             // Allow ES module imports to work seamlessly with CommonJS
+    "skipLibCheck": true,                // Skip checking .d.ts files for speed
+    "forceConsistentCasingInFileNames": true,
+    "target": "ES2020",                  // Use a modern JavaScript version
+    "module": "commonjs",                // Use CommonJS module system (or "ESNext" if you're targeting ES modules)
+    "types": ["node", "pg"],             // Add node types and pg types (PostgreSQL)
+    "baseUrl": ".",                      // Base directory to resolve non-relative modules
+    "paths": {
+      "@db/*": ["src/*"]                 // Alias for easier imports within the `db` package
+    }
+  },
+  "include": ["src/**/*.ts"],            // Include all TypeScript files in the src directory
+  "exclude": ["node_modules", "dist"]    // Exclude compiled files and node_modules
+}
