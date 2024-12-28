@@ -23,6 +23,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "next": "^15.1.2",
     "next-auth": "^4.24.10"
   }
 }

@@ -2,8 +2,8 @@ import "./globals.css";
 import "@repo/ui/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Appbar } from "./_components/Appbar";
 import { Providers } from "./provider";
+import { Appbar } from "./_components/Appbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>   
+        <Providers>
           <Appbar />
           {children}
         </Providers>

@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@repo/ui": "*",
-    "next": "^14.2.3",
+    "bcrypt": "^5.1.1",
+    "next": "^15.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -20,6 +21,7 @@
     "@repo/eslint-config": "*",
     "@repo/tailwind-config": "*",
     "@repo/typescript-config": "*",
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
