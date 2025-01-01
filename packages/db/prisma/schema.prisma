@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
+model User {
   user_id String @id @default(uuid())
   password String
   phone_number String @unique @db.VarChar(10)
@@ -21,4 +21,31 @@ model User{
   updated_at DateTime @default(now())
   email String?
   name String?
+  Balance Balance[]
+  onRampTransaction onRampTransaction[]
 } 
+
+model Balance {
+  id Int @id @default(autoincrement())
+  userId String @unique
+  amount Int 
+  locked Int
+  user User @relation(fields: [userId],references: [user_id])
+}
+
+model onRampTransaction {
+  id Int @id @default(autoincrement())
+  status onRampStatus
+  token String @unique
+  provider String
+  amount Int
+  startTime DateTime @default(now())
+  userId String
+  user User @relation(fields: [userId],references: [user_id])
+}
+
+enum onRampStatus {
+  Success
+  Failure
+  Processing
+}

@@ -10,7 +10,7 @@ export async function GET(req: any) {
   console.log(session?.user);
   if (session?.user) {
     return NextResponse.json({
-      session,
+      id: session.user.user_id,
     });
   } else {
     return NextResponse.json({

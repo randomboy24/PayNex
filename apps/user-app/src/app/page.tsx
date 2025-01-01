@@ -1,4 +1,3 @@
-"use client";
 import { Appbar } from "./_components/Appbar";
 
 export default function Home() {

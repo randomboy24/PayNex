@@ -10,7 +10,8 @@ export const authOptions = {
       credentials: {
         phone: {
           label: "Phone number: ",
-          type: "text",
+          type: "number",
+          maxLength: "10",
           placeholder: "1234567890",
           required: true,
         },
@@ -33,6 +34,7 @@ export const authOptions = {
             },
           });
           if (!existingUser) return null;
+          console.log("pass");
           const isValid = await bcrypt.compare(
             credentials.password,
             existingUser?.password as string
